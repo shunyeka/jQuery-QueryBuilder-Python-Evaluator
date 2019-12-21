@@ -1,5 +1,5 @@
 import json
-from rule_group import RuleGroup
+from jqqb_evaluator.rule_group import RuleGroup
 
 
 class Evaluator:
