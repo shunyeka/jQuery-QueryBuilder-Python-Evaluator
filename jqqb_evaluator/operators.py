@@ -11,9 +11,14 @@ class Operators:
 
     @staticmethod
     def eval_contains(left, right):
-        if isinstance(left, list):
-            return any(map(lambda x: right in x, left))
-        return right in left
+        if isinstance(right, list):
+            if isinstance(left, list):
+                return any([any(map(lambda x: r in x, left)) for r in right])
+            return any([r == left for r in right])
+        else:
+            if isinstance(left, list):
+                return any(map(lambda x: right in x, left))
+            return right in left
 
     @staticmethod
     def eval_ends_with(left, right):
@@ -89,9 +94,14 @@ class Operators:
 
     @staticmethod
     def eval_not_contains(left, right):
-        if isinstance(left, list):
-            return not any(map(lambda x: right in x, left))
-        return right not in left
+        if isinstance(right, list):
+            if isinstance(left, list):
+                return not any([any(map(lambda x: r in x, left)) for r in right])
+            return not any([r == left for r in right])
+        else:
+            if isinstance(left, list):
+                return not any(map(lambda x: right in x, left))
+            return right not in left
 
     @staticmethod
     def eval_not_ends_with(left, right):
