@@ -102,7 +102,7 @@ class Operators:
     @staticmethod
     def eval_not_equal(left, right):
         if isinstance(left, list):
-            return not any(map(lambda x: left == right, left))
+            return not any(map(lambda x: x == right, left))
         return left != right
 
     @staticmethod
