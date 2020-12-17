@@ -1,4 +1,8 @@
 class Operators:
+    
+    #left = The property of the object being evaluated.
+    #right = The value that was entered/selected by the user from the frontend (rule `value` property)
+    
     @staticmethod
     def eval_begins_with(left, right):
         if isinstance(left, list):
@@ -41,7 +45,7 @@ class Operators:
 
     @staticmethod
     def eval_in(left, right):
-        return right in left
+        return left in right
 
     @staticmethod
     def eval_is_empty(input, value):
@@ -107,4 +111,4 @@ class Operators:
 
     @staticmethod
     def eval_not_in(left, right):
-        return right not in left
+        return left not in right
